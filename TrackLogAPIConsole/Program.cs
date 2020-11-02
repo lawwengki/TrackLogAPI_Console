@@ -49,7 +49,8 @@ namespace TrackLogAPIConsole
             "[6] GetPaymentInfo\n" +
             "[7] GetSearch\n" +
             "[8] GetAddToWishList\n" +
-            "[9] GetSubscribe\n");
+            "[9] GetSubscribe\n" +
+            "[0] ResetAllEventsData\n");
             Console.Write("Please enter API functions Name: ");
             string argFunc = Console.ReadLine();
 
@@ -89,6 +90,9 @@ namespace TrackLogAPIConsole
                     break;
                 case "9":
                     funcName = "api/TrackLog/GetSubscribe";
+                    break;
+                case "0":
+                    funcName = "api/TrackLog/ResetAllEventsData";
                     break;
                 default:
                     return;
@@ -184,6 +188,15 @@ namespace TrackLogAPIConsole
             else if (argFunc == "9")
             {
                 rResult = cWebAPI.CallSubscribeAPI(apiconfig);
+                if (rResult)
+                {
+                    Console.Write("Successful. \n");
+                }
+                else { Console.Write("Something Wrong!! \n"); }
+            }
+            else if (argFunc == "0")
+            {
+                rResult = cWebAPI.ResetAllEventsData(apiconfig);
                 if (rResult)
                 {
                     Console.Write("Successful. \n");

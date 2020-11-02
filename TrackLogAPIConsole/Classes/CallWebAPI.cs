@@ -11,9 +11,9 @@ using System.Web.Script.Serialization;
 
 namespace TrackLogAPIConsole.Classes
 {
-    class CallWebAPI 
+    class CallWebAPI
     {
-        public bool CallAddtoCartAPI(APIConfigurations api) 
+        public bool CallAddtoCartAPI(APIConfigurations api)
         {
 
             bool rAPI = false;
@@ -34,24 +34,24 @@ namespace TrackLogAPIConsole.Classes
                     Console.WriteLine("===============Result================");
                     foreach (AddtoCartModel item in itemlst)
                     {
-                        
-                        Console.WriteLine("eventid:" + item.eventid );
-                        Console.WriteLine("products:" + item.products );
-                        Console.WriteLine("url:" + item.url );
-                        Console.WriteLine("currency :" + item.currency );
-                        Console.WriteLine("total_value:" + item.total_value );
-                        Console.WriteLine("email:" + item.email );
-                        Console.WriteLine("first_name :" + item.first_name );
-                        Console.WriteLine("phone :" + item.phone );
-                        Console.WriteLine("DOB :" + item.DOB );
-                        Console.WriteLine("city:" + item.city );
-                        Console.WriteLine("state:" + item.state );
-                        Console.WriteLine("country:" + item.country );
-                        Console.WriteLine("user_ip :" + item.user_ip );
-                        Console.WriteLine("browser_user_agent :" + item.browser_user_agent );
-                        Console.WriteLine("clickid :" + item.clickid );
-                        Console.WriteLine("browserid:" + item.browserid );
-                        Console.WriteLine("fb_loginid :" + item.fb_loginid );
+
+                        Console.WriteLine("eventid:" + item.eventid);
+                        Console.WriteLine("products:" + item.products);
+                        Console.WriteLine("url:" + item.url);
+                        Console.WriteLine("currency :" + item.currency);
+                        Console.WriteLine("total_value:" + item.total_value);
+                        Console.WriteLine("email:" + item.email);
+                        Console.WriteLine("first_name :" + item.first_name);
+                        Console.WriteLine("phone :" + item.phone);
+                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("city:" + item.city);
+                        Console.WriteLine("state:" + item.state);
+                        Console.WriteLine("country:" + item.country);
+                        Console.WriteLine("user_ip :" + item.user_ip);
+                        Console.WriteLine("browser_user_agent :" + item.browser_user_agent);
+                        Console.WriteLine("clickid :" + item.clickid);
+                        Console.WriteLine("browserid:" + item.browserid);
+                        Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
 
                     }
@@ -63,12 +63,12 @@ namespace TrackLogAPIConsole.Classes
             Console.WriteLine();
             return rAPI;
         }
-      
+
         public bool CallPageViewAPI(APIConfigurations api)
         {
 
             bool rAPI = false;
-         //   PageViewModel pageview = new PageViewModel();
+            //   PageViewModel pageview = new PageViewModel();
             using (WebClient webClient = new WebClient())
             {
                 webClient.BaseAddress = api.APIUrl;
@@ -467,10 +467,41 @@ namespace TrackLogAPIConsole.Classes
             Console.WriteLine();
             return rAPI;
         }
+        public bool ResetAllEventsData(APIConfigurations api)
+        {
+            bool rAPI = false;
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.BaseAddress = api.APIUrl;
+                webClient.Headers["Content-type"] = "application/json";
+                webClient.Encoding = Encoding.UTF8;
+                webClient.Headers.Add(HttpRequestHeader.Authorization,
+    Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(api.Credentials)));
+                var json = webClient.DownloadString(api.APIfunc);
+                RVal item = JsonSerializer.Deserialize<RVal>(json);
 
 
+                if (item.rStatus)
+                {
+                    Console.WriteLine("===============Result================");
+                    Console.WriteLine("Data has been reset.");
+                    Console.WriteLine("=============== End Result=============");
+
+                    rAPI = true;
+                }
+                else {
+                    Console.WriteLine("===============Result================");
+                    Console.WriteLine("Data reset Failed. Please try again. ");
+                    Console.WriteLine("=============== End Result=============");
+                }
+
+
+                return rAPI;
+            }
+            
+        }
     }
-     
 
-    
 }
+
+        

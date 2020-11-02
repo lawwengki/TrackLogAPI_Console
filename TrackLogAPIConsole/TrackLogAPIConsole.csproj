@@ -82,6 +82,7 @@
     <Compile Include="Models\PageViewModel.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\PurchaseModel.cs" />
+    <Compile Include="Models\RVal.cs" />
     <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\APIConfigurations.cs" />
     <Compile Include="Models\SubscribeModel.cs" />
