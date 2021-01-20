@@ -43,7 +43,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -91,7 +91,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -141,7 +141,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -192,7 +192,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -243,7 +243,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -296,7 +296,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -346,7 +346,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -396,7 +396,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
@@ -447,7 +447,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);
-                        Console.WriteLine("DOB :" + item.DOB);
+                        Console.WriteLine("DOB :" + item.dob);
                         Console.WriteLine("city:" + item.city);
                         Console.WriteLine("state:" + item.state);
                         Console.WriteLine("country:" + item.country);
