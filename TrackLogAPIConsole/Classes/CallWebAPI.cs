@@ -189,6 +189,7 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("reg_status:" + item.reg_status);
                         Console.WriteLine("currency :" + item.currency);
                         Console.WriteLine("total_value:" + item.total_value);
+                        Console.WriteLine("url:" + item.url);
                         Console.WriteLine("email:" + item.email);
                         Console.WriteLine("first_name :" + item.first_name);
                         Console.WriteLine("phone :" + item.phone);

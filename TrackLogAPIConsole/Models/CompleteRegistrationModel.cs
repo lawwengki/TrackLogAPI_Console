@@ -12,6 +12,7 @@ namespace TrackLogAPIConsole.Models
         public string reg_status { get; set; }
         public string currency { get; set; }
         public decimal total_value { get; set; }
+        public string url { get; set; }
         public string email { get; set; }
         public string first_name { get; set; }
         public string last_name { get; set; }
