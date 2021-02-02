@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -88,11 +88,23 @@
     <Compile Include="Models\SubscribeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TP\CAPI\Models\FacebookCustomData.cs" />
+    <Compile Include="TP\CAPI\Models\FacebookEvent.cs" />
+    <Compile Include="TP\CAPI\Models\FacebookUserData.cs" />
+    <Compile Include="TP\CAPI\Libraries\FacebookDataConverter.cs" />
+    <Compile Include="TP\CAPI\Libraries\FacebookClient.cs" />
+    <Compile Include="TP\CAPI\Libraries\FacebookEventRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="TP\" />
+    <Folder Include="TP\CAPI\" />
+    <Folder Include="TP\CAPI\Models\" />
+    <Folder Include="TP\CAPI\Libraries\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

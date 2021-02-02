@@ -228,7 +228,5 @@ namespace TrackLogAPIConsole
 
             return true;
         }
-
-
     }
 }

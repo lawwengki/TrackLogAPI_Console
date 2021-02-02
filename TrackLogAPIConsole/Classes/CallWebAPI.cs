@@ -1,18 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.Json;
-using TrackLogAPIConsole.Models;
+using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using TP_CAPI.Libraries;
+using TP_CAPI.Models;
+using TrackLogAPIConsole.Models;
 
 namespace TrackLogAPIConsole.Classes
 {
     class CallWebAPI
     {
+        private FacebookClient facebookClient;
+        private string facebookToken;
+        private string facebookPixelId;
+
+        public CallWebAPI()
+        {
+            facebookToken = ConfigurationManager.AppSettings["FacebookToken"];
+            facebookPixelId = ConfigurationManager.AppSettings["FacebookPixelId"];
+
+            facebookClient = new FacebookClient(facebookToken);
+        }
+
+
         public bool CallAddtoCartAPI(APIConfigurations api)
         {
 
@@ -53,6 +69,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("browserid:" + item.browserid);
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
+
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
 
                     }
                     Console.WriteLine("=============== End Result=============");
@@ -102,6 +127,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
 
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
+
                     }
                     Console.WriteLine("=============== End Result=============");
                 }
@@ -121,8 +155,7 @@ namespace TrackLogAPIConsole.Classes
                 webClient.BaseAddress = api.APIUrl;
                 webClient.Headers["Content-type"] = "application/json";
                 webClient.Encoding = Encoding.UTF8;
-                webClient.Headers.Add(HttpRequestHeader.Authorization,
-    Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(api.Credentials)));
+                webClient.Headers.Add(HttpRequestHeader.Authorization, Convert.ToBase64String(System.Text.ASCIIEncoding.ASCII.GetBytes(api.Credentials)));
                 var json = webClient.DownloadString(api.APIfunc);
 
                 List<PurchaseModel> itemlst = JsonSerializer.Deserialize<List<PurchaseModel>>(json);
@@ -151,6 +184,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("browserid:" + item.browserid);
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
+
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
 
                     }
                     Console.WriteLine("=============== End Result=============");
@@ -204,6 +246,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
 
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
+
                     }
                     Console.WriteLine("=============== End Result=============");
                 }
@@ -254,6 +305,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("browserid:" + item.browserid);
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
+
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
 
                     }
                     Console.WriteLine("=============== End Result=============");
@@ -308,6 +368,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
 
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
+
                     }
                     Console.WriteLine("=============== End Result=============");
                 }
@@ -357,6 +426,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("browserid:" + item.browserid);
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
+
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
 
                     }
                     Console.WriteLine("=============== End Result=============");
@@ -408,6 +486,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
 
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
+
                     }
                     Console.WriteLine("=============== End Result=============");
                 }
@@ -458,6 +545,15 @@ namespace TrackLogAPIConsole.Classes
                         Console.WriteLine("browserid:" + item.browserid);
                         Console.WriteLine("fb_loginid :" + item.fb_loginid);
                         Console.WriteLine("\n");
+
+                        FacebookEvent facebookEvent = FacebookDataConverter.parseItemData(item);
+
+                        if (facebookEvent != null)
+                        {
+                            FacebookEventRequest eventRequest = new FacebookEventRequest(facebookPixelId, facebookClient);
+                            eventRequest.addEventItem(facebookEvent);
+                            eventRequest.execute();
+                        }
 
                     }
                     Console.WriteLine("=============== End Result=============");
